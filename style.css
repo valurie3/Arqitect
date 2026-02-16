@@ -105,3 +105,66 @@ h1 {
     opacity: 0.4;
     font-size: 0.6rem;
 }
+#news-deck {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(15px);
+    z-index: 9999;
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    padding: 40px;
+    border: 1px solid var(--accent);
+}
+
+.terminal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+}
+
+.news-entry {
+    border-left: 2px solid var(--accent);
+    padding-left: 20px;
+    margin-bottom: 40px;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.news-entry h2 {
+    font-size: 1.8rem;
+    letter-spacing: 3px;
+    margin: 10px 0;
+}
+
+.news-entry time {
+    font-family: 'Courier New', monospace;
+    color: var(--accent);
+    font-weight: bold;
+}
+
+.exit-cmd {
+    background: var(--accent);
+    color: black;
+    border: none;
+    padding: 5px 15px;
+    cursor: pointer;
+    font-weight: 900;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.cursor {
+    animation: blink 1s infinite;
+    color: var(--accent);
+    font-size: 2rem;
+}
+
+@keyframes blink { 50% { opacity: 0; } }
